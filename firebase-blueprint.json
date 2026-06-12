@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "Listing": {
+      "title": "Listing",
+      "description": "Vinted listing item including its details, physical warehouse placement, status and sales transaction details.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier of the listing." },
+        "title": { "type": "string", "description": "Title of the Vinted listing." },
+        "listing_price": { "type": "number", "description": "Expected retail sale price of the item." },
+        "storage_location": { "type": "string", "description": "Physical box, row, or rack where the item is stored." },
+        "status": { "type": "string", "enum": ["Listed", "Sold"], "description": "Inventory lifecycle state." },
+        "buying_cost": { "type": "number", "description": "Amount spent acquiring the listing." },
+        "sold_price": { "type": "number", "description": "Actual liquidated sale amount." },
+        "created_at": { "type": "string", "description": "ISO String representation of creation time." },
+        "sold_at": { "type": "string", "description": "ISO String of sold transaction execution." }
+      },
+      "required": ["title", "listing_price", "storage_location", "status", "created_at"]
+    }
+  },
+  "firestore": {
+    "listings/{listingId}": {
+      "schema": "Listing",
+      "description": "A collection containing all Vinted system inventory records"
+    }
+  }
+}

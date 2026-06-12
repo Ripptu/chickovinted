@@ -1,0 +1,6 @@
+{
+  "name": "Vinted Reseller Hub",
+  "description": "Eine minimalistische, von WHOOP inspirierte mobile Web-App zur Verwaltung von Vinted-Warenbeständen, Verkäufen, Reingewinnen und physischen Lagerorten auf Deutsch.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

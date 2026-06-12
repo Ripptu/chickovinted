@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Global Safety Net: Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. Allow access to listing documents for public seamless inventory tracking
+    match /listings/{listingId} {
+      allow read, write: if true;
+    }
+  }
+}

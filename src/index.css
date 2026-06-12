@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer utilities {
+  /* Minimalist razor-sharp cards resembling Whoop fitness stats & metric containers */
+  .whoop-card {
+    background: #0d0d10;
+    border: 1px solid #1c1c24;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .whoop-card-interactive {
+    background: #0d0d10;
+    border: 1px solid #1c1c24;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .whoop-card-interactive:hover {
+    background: #121217;
+    border-color: #3b82f6; /* Whoop subtle blue accent */
+    transform: translateY(-1px);
+  }
+
+  /* Precise subtle dynamic indicators */
+  .badge-minimal {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-weight: 700;
+  }
+
+  /* Hide scrollbars, but allow scrolling */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+body {
+  background-color: #050507;
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
